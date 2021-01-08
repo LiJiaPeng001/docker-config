@@ -23,3 +23,13 @@ services:
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_0900_ai_ci
       --explicit_defaults_for_timestamp=true
+  koa2:
+    image: node:12
+    restart: always
+    container_name: koa2_api
+    ports:
+      - 10086:10086
+    working_dir: $BASE_URL/blog_node
+    volumes:
+      - '$BASE_URL/blog_node:$BASE_URL/blog_node'
+    command: npm run start
