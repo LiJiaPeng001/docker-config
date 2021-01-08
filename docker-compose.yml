@@ -8,4 +8,10 @@ services:
       - 80:80
     privileged: true
     volumes:
-      - '/var/www/docker-config/nginx/conf.d:/etc/nginx/conf.d'
+      - './nginx/conf.d:/etc/nginx/conf.d'
+  mysql:
+    restart: always
+    image: mysql
+    container_name: mysql
+    ports:
+      - 3306:3306
