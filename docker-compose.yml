@@ -9,6 +9,7 @@ services:
     privileged: true
     volumes:
       - './nginx/conf.d:/etc/nginx/conf.d'
+      - './nginx/www:/etc/www'
   mysql:
     restart: always
     image: mysql
