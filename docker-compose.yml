@@ -19,3 +19,7 @@ services:
       MYSQL_PASS: 'l201314520'
     ports:
       - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_0900_ai_ci
+      --explicit_defaults_for_timestamp=true
