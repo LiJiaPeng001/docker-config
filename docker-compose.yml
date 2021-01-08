@@ -4,7 +4,6 @@ services:
     image: nginx
     container_name: nginx
     volumes:
-      - '/var/www/docker-conf/nginx/nginx.conf:/etc/nginx/nginx.conf'
       - '/var/www/docker-conf/nginx/conf.d:/etc/nginx/conf.d'
       - '/var/www/docker-conf/nginx/logs:/var/log/nginx'
       - '/var/www/docker-conf/nginx/html:/usr/share/nginx/html'
