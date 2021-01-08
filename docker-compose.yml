@@ -1,28 +1,28 @@
 version: '3'
 services:
-  # nginx:
-  #   image: nginx
-  #   container_name: nginx
-  #   restart: always
-  #   ports:
-  #     - 80:80
-  #   privileged: true
-  #   volumes:
-  #     - './nginx/conf.d:/etc/nginx/conf.d'
-  # mysql:
-  #   restart: always
-  #   image: mysql
-  #   container_name: mysql
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: 'Ljp521/*-'
-  #     MYSQL_USER: 'lijiapeng'
-  #     MYSQL_PASS: 'l201314520'
-  #   ports:
-  #     - 3306:3306
-  #   command: --default-authentication-plugin=mysql_native_password
-  #     --character-set-server=utf8mb4
-  #     --collation-server=utf8mb4_0900_ai_ci
-  #     --explicit_defaults_for_timestamp=true
+  nginx:
+    image: nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+    privileged: true
+    volumes:
+      - './nginx/conf.d:/etc/nginx/conf.d'
+  mysql:
+    restart: always
+    image: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Ljp521/*-'
+      MYSQL_USER: 'lijiapeng'
+      MYSQL_PASS: 'l201314520'
+    ports:
+      - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_0900_ai_ci
+      --explicit_defaults_for_timestamp=true
   koa2:
     image: node:12
     restart: always
@@ -32,4 +32,4 @@ services:
     working_dir: /var/www/blog_node
     volumes:
       - '/var/www/blog_node:/var/www/blog_node'
-    command: npm run dev
+    command: npm run start
