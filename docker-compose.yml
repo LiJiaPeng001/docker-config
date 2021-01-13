@@ -24,13 +24,13 @@ services:
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_0900_ai_ci
       --explicit_defaults_for_timestamp=true
-  koa2:
-    image: node:12
+  jenkins:
     restart: always
-    container_name: koa2_api
+    image: jenkinsci/blueocean
+    container_name: jenkins
     ports:
-      - 10086:10086
-    working_dir: /var/www/blog_node
+      - 1200:8080
+      - 1201:50000
     volumes:
-      - '/var/www/blog_node:/var/www/blog_node'
-    command: npm run start
+      - '/var/www/jenkins_home:/var/jenkins_home'
+      - './nginx/www:/var/www'
