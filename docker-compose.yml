@@ -34,3 +34,12 @@ services:
     volumes:
       - '/var/www/jenkins_home:/var/jenkins_home'
       - './nginx/www:/var/www'
+  koa_node:
+    image: node:12
+    container_name: koa_node
+    working_dir: /var/www/blog_admin
+    volumes:
+      - '/var/www/blog_node:/var/www/blog_node'
+    ports:
+      - 1202:1202
+    command: npm run start
