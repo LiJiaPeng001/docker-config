@@ -37,7 +37,7 @@ services:
   koa_node:
     image: node:12
     container_name: koa_node
-    working_dir: /var/blog_admin
+    working_dir: /var/blog_node
     volumes:
       - '/var/www/blog_node:/var/blog_node'
     ports:
