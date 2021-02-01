@@ -9,7 +9,6 @@ services:
     privileged: true
     volumes:
       - './nginx/conf.d:/etc/nginx/conf.d'
-      - './nginx/ssl:/etc/nginx/ssl'
       - './nginx/www:/etc/www'
   mysql:
     restart: always
