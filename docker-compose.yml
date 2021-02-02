@@ -1,6 +1,8 @@
 version: '3'
 services:
   nginx:
+    environment:
+      TZ: Asia/Shanghai
     image: nginx
     container_name: nginx
     restart: always
