@@ -12,6 +12,8 @@ services:
       - './nginx/conf.d:/etc/nginx/conf.d'
       - './nginx/www:/etc/www'
   mysql:
+    environment:
+      TZ: Asia/Shanghai
     restart: always
     image: mysql
     container_name: mysql
@@ -36,6 +38,8 @@ services:
   #     - '/var/www/jenkins_home:/var/jenkins_home'
   #     - './nginx/www:/var/www'
   koa-node:
+    environment:
+      TZ: Asia/Shanghai
     image: node:12
     container_name: koa-node
     working_dir: /var/blog_node
@@ -46,6 +50,8 @@ services:
     command: npm run start
   # 主站
   nuxt-project:
+    environment:
+      TZ: Asia/Shanghai
     image: node:12
     container_name: nuxt-project
     working_dir: /var/nuxt-project/website
