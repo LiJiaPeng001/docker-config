@@ -14,17 +14,18 @@ services:
       - './nginx/conf.d:/etc/nginx/conf.d'
       - './nginx/www:/etc/www'
   mysql:
-    environment:
-      TZ: Asia/Shanghai
     restart: always
     image: mysql
     container_name: mysql
     environment:
+      TZ: Asia/Shanghai
       MYSQL_ROOT_PASSWORD: 'Ljp521/*-'
       MYSQL_USER: 'lijiapeng'
       MYSQL_PASS: 'l201314520'
     ports:
       - 3306:3306
+    volumes:
+      - './mysql/data:/var/lib/mysql'
     command: --default-authentication-plugin=mysql_native_password
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_0900_ai_ci
