@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   nginx:
     environment:
@@ -11,21 +11,21 @@ services:
       - 443:443
     privileged: true
     volumes:
-      - './nginx/conf.d:/etc/nginx/conf.d'
-      - './nginx/www:/etc/www'
+      - "./nginx/conf.d:/etc/nginx/conf.d"
+      - "./nginx/www:/etc/www"
   mysql:
     restart: always
     image: mysql
     container_name: mysql
     environment:
       TZ: Asia/Shanghai
-      MYSQL_ROOT_PASSWORD: 'Ljp521/*-'
-      MYSQL_USER: 'lijiapeng'
-      MYSQL_PASS: 'l201314520'
+      MYSQL_ROOT_PASSWORD: "Ljp521/*-"
+      MYSQL_USER: "lijiapeng"
+      MYSQL_PASS: "l201314520"
     ports:
       - 3306:3306
     volumes:
-      - './mysql/data:/var/lib/mysql'
+      - "./mysql/data:/var/lib/mysql"
     command: --default-authentication-plugin=mysql_native_password
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_0900_ai_ci
@@ -47,7 +47,8 @@ services:
     container_name: koa-node
     working_dir: /var/blog_node
     volumes:
-      - '/var/www/blog_node:/var/blog_node'
+      - "/var/www/blog_node:/var/blog_node"
+      - "/var/www/static:/var/static"
     ports:
       - 1202:1202
     command: npm run start
@@ -59,7 +60,7 @@ services:
     container_name: nuxt-project
     working_dir: /var/nuxt-project/website
     volumes:
-      - '/var/www/nuxt-project:/var/nuxt-project'
+      - "/var/www/nuxt-project:/var/nuxt-project"
     ports:
       - 3000:3000
     command: npm run start
