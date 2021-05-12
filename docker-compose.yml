@@ -13,6 +13,7 @@ services:
     volumes:
       - "./nginx/conf.d:/etc/nginx/conf.d"
       - "./nginx/www:/etc/www"
+      - "/var/www/static:/var/www/static"
   mysql:
     restart: always
     image: mysql
