@@ -1,2 +1,8 @@
 # docker-config
-docker配置文件
+
+docker 配置文件
+
+```
+cd docker-config
+docker-compose up -d
+```
