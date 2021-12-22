@@ -33,12 +33,12 @@ services:
       - 1202:1202
     command: npm run start
   # 主站
-  nuxt-project:
-    image: node:12
-    container_name: nuxt-project
-    working_dir: /var/nuxt-project/website
-    volumes:
-      - "/var/www/nuxt-project:/var/nuxt-project"
-    ports:
-      - 3000:3000
-    command: npm run start
+  # nuxt-project:
+  #   image: node:12
+  #   container_name: nuxt-project
+  #   working_dir: /var/nuxt-project/website
+  #   volumes:
+  #     - "/var/www/nuxt-project:/var/nuxt-project"
+  #   ports:
+  #     - 3000:3000
+  #   command: npm run start
